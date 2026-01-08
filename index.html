@@ -9,24 +9,18 @@
 
   <style>
     :root{
-      /* Apple-like light luxury */
-      --bg: #ffffff;
-      --bg2:#f5f5f7;
-      --surface: rgba(0,0,0,.03);
-      --surface2: rgba(0,0,0,.05);
+      --bg:#ffffff; --bg2:#f5f5f7;
       --border: rgba(0,0,0,.10);
-
       --text: rgba(0,0,0,.90);
       --muted: rgba(0,0,0,.62);
       --faint: rgba(0,0,0,.46);
+      --accent:#0a84ff;
 
-      --accent: #0a84ff; /* subtle Apple-like blue */
       --radius: 18px;
       --radius2: 26px;
       --shadow: 0 20px 60px rgba(0,0,0,.10);
       --max: 1120px;
     }
-
     *{ box-sizing:border-box; }
     html,body{ height:100%; }
     body{
@@ -39,7 +33,6 @@
         linear-gradient(180deg, var(--bg), var(--bg2));
       overflow-x:hidden;
     }
-
     a{ color:inherit; text-decoration:none; }
     .wrap{ width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
 
@@ -49,17 +42,8 @@
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 14px;
-      padding: 12px 0;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 750;
-      letter-spacing: .2px;
-      white-space: nowrap;
-    }
+    .nav{ display:flex; align-items:center; justify-content:space-between; gap: 14px; padding: 12px 0; }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight: 750; letter-spacing: .2px; white-space: nowrap; }
     .mark{
       width: 32px; height: 32px;
       border-radius: 12px;
@@ -71,13 +55,7 @@
     }
 
     .menu{ display:none; align-items:center; gap: 8px; }
-    .menu a{
-      font-size: 14px;
-      color: var(--muted);
-      padding: 9px 10px;
-      border-radius: 12px;
-      transition: .2s ease;
-    }
+    .menu a{ font-size: 14px; color: var(--muted); padding: 9px 10px; border-radius: 12px; transition: .2s ease; }
     .menu a:hover{ color: var(--text); background: rgba(0,0,0,.04); }
 
     .btn{
@@ -106,8 +84,7 @@
     }
 
     .hamburger{
-      display:inline-flex;
-      align-items:center; justify-content:center;
+      display:inline-flex; align-items:center; justify-content:center;
       width: 42px; height: 42px;
       border-radius: 14px;
       border: 1px solid var(--border);
@@ -131,12 +108,7 @@
     }
 
     .hero{ padding: 44px 0 18px; }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      align-items: start;
-    }
+    .heroGrid{ display:grid; grid-template-columns: 1fr; gap: 14px; align-items: start; }
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
       width: fit-content;
@@ -147,37 +119,12 @@
       color: var(--muted);
       font-size: 13px;
     }
-    .dot{
-      width: 7px; height: 7px; border-radius: 99px;
-      background: var(--accent);
-      box-shadow: 0 0 18px rgba(10,132,255,.18);
-    }
-    h1{
-      margin: 12px 0 10px;
-      font-size: clamp(30px, 5.2vw, 56px);
-      line-height: 1.06;
-      letter-spacing: -1px;
-    }
-    .lead{
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.75;
-      max-width: 68ch;
-    }
-    .actions{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 14px 0 10px;
-    }
+    .dot{ width:7px; height:7px; border-radius:99px; background: var(--accent); box-shadow: 0 0 18px rgba(10,132,255,.18); }
+    h1{ margin: 12px 0 10px; font-size: clamp(30px, 5.2vw, 56px); line-height: 1.06; letter-spacing: -1px; }
+    .lead{ margin: 0 0 16px; color: var(--muted); font-size: 16px; line-height: 1.75; max-width: 68ch; }
+    .actions{ display:flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 10px; }
 
-    .strip{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 14px;
-    }
+    .strip{ display:grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
     .stripItem{
       padding: 14px 14px;
       border-radius: var(--radius);
@@ -186,13 +133,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,.06);
     }
     .stripItem b{ display:block; font-size: 14.5px; }
-    .stripItem span{
-      display:block;
-      margin-top: 4px;
-      color: var(--faint);
-      font-size: 13px;
-      line-height: 1.55;
-    }
+    .stripItem span{ display:block; margin-top:4px; color: var(--faint); font-size: 13px; line-height: 1.55; }
 
     .card{
       border-radius: var(--radius2);
@@ -203,15 +144,10 @@
     }
 
     .reel{ padding: 14px; }
-    .reelTop{
-      display:flex; align-items:center; justify-content:space-between; gap: 12px;
-      margin-bottom: 10px;
-    }
+    .reelTop{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px; }
     .reelTop b{ font-size: 15px; }
     .chip{
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
+      font-size: 12px; padding: 6px 10px; border-radius: 999px;
       border: 1px solid rgba(0,0,0,.10);
       background: rgba(0,0,0,.03);
       color: rgba(0,0,0,.68);
@@ -227,52 +163,22 @@
       border: 1px solid rgba(0,0,0,.10);
       background: rgba(0,0,0,.03);
     }
-    .embed iframe{
-      position:absolute; inset:0;
-      width:100%; height:100%;
-      border:0;
-    }
+    .embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
 
-    .tags{
-      display:flex; gap: 8px; flex-wrap: wrap;
-      margin-top: 10px;
-    }
+    .tags{ display:flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
     .tag{
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
+      font-size: 12px; padding: 6px 10px; border-radius: 999px;
       border: 1px solid rgba(0,0,0,.08);
       background: rgba(0,0,0,.02);
       color: rgba(0,0,0,.64);
     }
-    .reelNote{
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
 
     section{ padding: 34px 0; }
-    .head{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
+    .head{ display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:14px; }
     h2{ margin:0; font-size: 20px; letter-spacing: -.2px; }
-    .sub{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 14.5px;
-      line-height: 1.7;
-      max-width: 74ch;
-    }
+    .sub{ margin: 6px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.7; max-width: 74ch; }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
+    .grid{ display:grid; grid-template-columns: 1fr; gap: 12px; }
     .service{ padding: 16px; }
     .service h3{ margin: 0 0 6px; font-size: 16px; }
     .service p{ margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
@@ -287,9 +193,11 @@
       grid-template-columns: 1fr;
       gap: 12px;
     }
+
     form{ display:grid; gap: 10px; }
+    .row{ display:grid; grid-template-columns: 1fr; gap:10px; }
     label{ font-size: 13px; color: var(--muted); }
-    input, textarea{
+    input, textarea, select{
       width: 100%;
       border-radius: 14px;
       border: 1px solid rgba(0,0,0,.10);
@@ -299,17 +207,24 @@
       outline:none;
       font-size: 14px;
     }
-    textarea{ min-height: 110px; resize: vertical; }
-    input:focus, textarea:focus{
+    textarea{ min-height: 120px; resize: vertical; }
+    input:focus, textarea:focus, select:focus{
       border-color: rgba(10,132,255,.40);
       box-shadow: 0 0 0 4px rgba(10,132,255,.12);
     }
-    .note{
-      margin: 8px 0 0;
-      color: var(--faint);
-      font-size: 13px;
-      line-height: 1.65;
+    .note{ margin: 8px 0 0; color: var(--faint); font-size: 13px; line-height: 1.65; }
+    .status{
+      display:none;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.10);
+      background: rgba(0,0,0,.03);
+      color: rgba(0,0,0,.80);
+      font-size: 14px;
+      line-height: 1.5;
     }
+    .status.ok{ border-color: rgba(16,185,129,.25); background: rgba(16,185,129,.08); }
+    .status.bad{ border-color: rgba(239,68,68,.25); background: rgba(239,68,68,.08); }
 
     footer{
       padding: 22px 0 40px;
@@ -318,10 +233,7 @@
       margin-top: 6px;
       background: rgba(255,255,255,.55);
     }
-    .foot{
-      display:flex; justify-content:space-between; gap: 12px;
-      flex-wrap:wrap; align-items:center;
-    }
+    .foot{ display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap; align-items:center; }
     .foot a{
       color: var(--muted);
       font-size: 13px;
@@ -347,6 +259,7 @@
       .work{ grid-column: span 4; }
       .contact{ grid-template-columns: 1.05fr .95fr; padding: 18px; }
       h2{ font-size: 22px; }
+      .row{ grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -394,7 +307,7 @@
 
           <h1>Minimal visuals. Maximum impact.</h1>
           <p class="lead">
-            We craft CGI and VFX videos that feel expensive because the details are handled properly:
+            CGI and VFX videos that feel expensive because the details are handled properly:
             lighting, materials, compositing, timing, and finishing.
           </p>
 
@@ -466,27 +379,22 @@
             <h3>Product CGI</h3>
             <p>Photoreal renders and animation for launches, ads, and hero shots.</p>
           </article>
-
           <article class="card service">
             <h3>VFX &amp; Compositing</h3>
             <p>Tracking, cleanup, screen replacement, set extensions, match grade.</p>
           </article>
-
           <article class="card service">
             <h3>3D Animation</h3>
             <p>Cinematic motion and explainers with strong timing and clean design.</p>
           </article>
-
           <article class="card service">
             <h3>Simulations</h3>
             <p>Fluids, smoke, particles, cloth — art-directed and controlled.</p>
           </article>
-
           <article class="card service">
             <h3>Color &amp; Finishing</h3>
             <p>Consistent look across shots and platforms with correct deliverables.</p>
           </article>
-
           <article class="card service">
             <h3>Creative Direction</h3>
             <p>Boards, styleframes, shot planning — so production doesn’t drift.</p>
@@ -500,12 +408,11 @@
         <div class="head">
           <div>
             <h2>Selected work</h2>
-            <p class="sub">Your three videos embedded below.</p>
+            <p class="sub">Three videos embedded.</p>
           </div>
         </div>
 
         <div class="grid">
-          <!-- Video 1 (same link as you provided) -->
           <article class="card work">
             <div class="embed">
               <iframe
@@ -521,11 +428,10 @@
             <p class="meta">YouTube · eFEZ5Db6cyY</p>
           </article>
 
-          <!-- Video 2 (duplicate, as requested) -->
           <article class="card work">
             <div class="embed">
               <iframe
-                src="https://www.youtube.com/embed/eFEZ5Db6cyY?rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/7xrCC9E2vYM?rel=0&modestbranding=1"
                 title="Selected Work 2"
                 loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -534,10 +440,9 @@
               </iframe>
             </div>
             <h3>Selected Work — 02</h3>
-            <p class="meta">YouTube · eFEZ5Db6cyY</p>
+            <p class="meta">YouTube · 7xrCC9E2vYM</p>
           </article>
 
-          <!-- Video 3 -->
           <article class="card work">
             <div class="embed">
               <iframe
@@ -561,28 +466,70 @@
         <article class="card contact">
           <div>
             <h2>Get a quote</h2>
-            <p class="sub">Share your brief. Include deadline + budget range if you want a serious response.</p>
+            <p class="sub">This form actually captures leads. No mail app required.</p>
             <p class="note">
               Email: <a href="mailto:hello@yourstudio.com" style="text-decoration:underline;color:var(--accent);">hello@yourstudio.com</a><br/>
               Location: Your City · Remote worldwide
             </p>
           </div>
 
-          <form action="mailto:hello@yourstudio.com" method="post" enctype="text/plain">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Your name" required />
+          <!-- Formspree: create a form there, then replace YOUR_FORMSPREE_ID -->
+          <form id="quoteForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required />
+              </div>
             </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@company.com" required />
+
+            <div class="row">
+              <div>
+                <label for="timeline">Timeline</label>
+                <select id="timeline" name="timeline" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>ASAP (1–3 days)</option>
+                  <option>1 week</option>
+                  <option>2–4 weeks</option>
+                  <option>1–2 months</option>
+                  <option>Flexible</option>
+                </select>
+              </div>
+              <div>
+                <label for="budget">Budget range</label>
+                <select id="budget" name="budget" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>Under $500</option>
+                  <option>$500–$2,000</option>
+                  <option>$2,000–$5,000</option>
+                  <option>$5,000–$10,000</option>
+                  <option>$10,000+</option>
+                </select>
+              </div>
             </div>
+
+            <div>
+              <label for="briefLink">Brief / references link (optional)</label>
+              <input id="briefLink" name="briefLink" placeholder="Google Drive / Notion / YouTube / Dropbox link" />
+            </div>
+
             <div>
               <label for="message">Project details</label>
-              <textarea id="message" name="message" placeholder="What are you making? Duration? References? Deadline? Budget range?" required></textarea>
+              <textarea id="message" name="message" placeholder="What are you making? Duration? Style references? Deliverables (Reels/Ads/YouTube)?" required></textarea>
             </div>
-            <button class="btn primary" type="submit">Send inquiry</button>
-            <p class="note">Mailto depends on the visitor’s email app. For proper lead capture, use a real form endpoint.</p>
+
+            <!-- anti-spam honeypot -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <button class="btn primary" type="submit" id="submitBtn">Send inquiry</button>
+            <div class="status" id="statusBox" aria-live="polite"></div>
+
+            <p class="note">
+              After you add your Formspree endpoint, this will submit instantly and show success/fail messages.
+            </p>
           </form>
         </article>
       </div>
@@ -607,14 +554,11 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
+    // Mobile menu
     const btn = document.getElementById("hamburger");
     const panel = document.getElementById("mobilePanel");
     const links = document.querySelectorAll(".mLink");
-
-    function closeMenu(){
-      panel.style.display = "none";
-      btn.setAttribute("aria-expanded", "false");
-    }
+    function closeMenu(){ panel.style.display="none"; btn.setAttribute("aria-expanded","false"); }
     btn.addEventListener("click", () => {
       const open = panel.style.display === "block";
       panel.style.display = open ? "none" : "block";
@@ -622,6 +566,54 @@
     });
     links.forEach(a => a.addEventListener("click", closeMenu));
     window.addEventListener("resize", () => { if (window.innerWidth >= 980) closeMenu(); });
+
+    // Better form submit (AJAX) for static hosting
+    const form = document.getElementById("quoteForm");
+    const statusBox = document.getElementById("statusBox");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const action = form.getAttribute("action") || "";
+      if (!action.includes("formspree.io/f/") || action.includes("YOUR_FORMSPREE_ID")) {
+        statusBox.className = "status bad";
+        statusBox.style.display = "block";
+        statusBox.textContent = "Form is not configured. Replace YOUR_FORMSPREE_ID in the form action with your Formspree endpoint.";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+      statusBox.style.display = "none";
+
+      try{
+        const data = new FormData(form);
+        const res = await fetch(action, {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok){
+          form.reset();
+          statusBox.className = "status ok";
+          statusBox.style.display = "block";
+          statusBox.textContent = "Sent. You’ll get a reply at your email.";
+        } else {
+          statusBox.className = "status bad";
+          statusBox.style.display = "block";
+          statusBox.textContent = "Failed to send. Try again or email directly.";
+        }
+      } catch (err){
+        statusBox.className = "status bad";
+        statusBox.style.display = "block";
+        statusBox.textContent = "Network error. Try again or email directly.";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send inquiry";
+      }
+    });
   </script>
 </body>
 </html>
