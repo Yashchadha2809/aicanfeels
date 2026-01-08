@@ -1,25 +1,564 @@
-<!-- thanks.html (create this file in the same repo root) -->
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thanks — Studio Name</title>
+  <title>Studio Name — CGI & VFX</title>
+  <meta name="description" content="Minimal, premium CGI and VFX videos for brands. Product CGI, compositing, simulations, and finishing." />
   <meta name="theme-color" content="#ffffff" />
+
   <style>
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#f5f5f7;color:#111;}
-    .wrap{max-width:840px;margin:0 auto;padding:64px 18px;}
-    .card{background:#fff;border:1px solid rgba(0,0,0,.10);border-radius:18px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.08);}
-    a{color:#0a84ff;text-decoration:none;}
+    :root{
+      --bg:#ffffff; --bg2:#f5f5f7;
+      --border: rgba(0,0,0,.10);
+      --text: rgba(0,0,0,.90);
+      --muted: rgba(0,0,0,.62);
+      --faint: rgba(0,0,0,.46);
+      --accent:#0a84ff;
+
+      --radius: 18px;
+      --radius2: 26px;
+      --shadow: 0 20px 60px rgba(0,0,0,.10);
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 25% 10%, rgba(10,132,255,.08), transparent 60%),
+        radial-gradient(900px 600px at 75% 15%, rgba(0,0,0,.04), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
+
+    /* Header */
+    header{
+      position: sticky; top:0; z-index: 50;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{ display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 0; }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight: 750; letter-spacing:.2px; white-space:nowrap; }
+    .mark{
+      width: 32px; height: 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.95), rgba(0,0,0,.05) 45%, transparent 65%),
+        linear-gradient(135deg, rgba(10,132,255,.22), rgba(0,0,0,.02));
+      box-shadow: 0 18px 50px rgba(0,0,0,.08);
+    }
+
+    .menu{ display:none; align-items:center; gap:8px; }
+    .menu a{ font-size:14px; color:var(--muted); padding:9px 10px; border-radius:12px; transition:.2s ease; }
+    .menu a:hover{ color:var(--text); background: rgba(0,0,0,.04); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.03);
+      color: var(--text);
+      font-size: 14px;
+      transition: .2s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(0,0,0,.05); }
+    .btn.primary{
+      background: var(--accent);
+      border-color: rgba(10,132,255,.55);
+      color: #fff;
+    }
+    .btn.primary:hover{ filter: brightness(1.02); }
+    .btn.ghost{
+      background: transparent;
+      border-color: rgba(0,0,0,.08);
+      color: var(--muted);
+    }
+
+    .hamburger{
+      display:inline-flex; align-items:center; justify-content:center;
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.03);
+      cursor:pointer;
+    }
+    .hamburger svg{ width:20px; height:20px; fill: rgba(0,0,0,.72); }
+    .mobile{
+      display:none;
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,.92);
+    }
+    .mobile .wrap{ padding: 10px 0 14px; display:grid; gap:10px; }
+    .mobile a{
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.08);
+      color: rgba(0,0,0,.85);
+      font-size: 14px;
+    }
+
+    /* Hero */
+    .hero{ padding: 44px 0 18px; }
+    .heroGrid{ display:grid; grid-template-columns: 1fr; gap:14px; align-items:start; }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.70);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .dot{ width:7px; height:7px; border-radius:99px; background: var(--accent); box-shadow: 0 0 18px rgba(10,132,255,.18); }
+    h1{ margin: 12px 0 10px; font-size: clamp(30px, 5.2vw, 56px); line-height: 1.06; letter-spacing: -1px; }
+    .lead{ margin: 0 0 16px; color: var(--muted); font-size: 16px; line-height: 1.75; max-width: 68ch; }
+    .actions{ display:flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 10px; }
+
+    .strip{ display:grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
+    .stripItem{
+      padding: 14px 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.70);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+    .stripItem b{ display:block; font-size: 14.5px; }
+    .stripItem span{ display:block; margin-top:4px; color: var(--faint); font-size: 13px; line-height: 1.55; }
+
+    .card{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.70);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Video embed */
+    .embed{
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(0,0,0,.10);
+      background: rgba(0,0,0,.03);
+    }
+    .embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+    .reel{ padding: 14px; }
+    .reelTop{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px; }
+    .reelTop b{ font-size: 15px; }
+    .chip{
+      font-size: 12px; padding: 6px 10px; border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.10);
+      background: rgba(0,0,0,.03);
+      color: rgba(0,0,0,.68);
+      white-space: nowrap;
+    }
+
+    .tags{ display:flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .tag{
+      font-size: 12px; padding: 6px 10px; border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(0,0,0,.02);
+      color: rgba(0,0,0,.64);
+    }
+    .reelNote{ margin: 10px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+    /* Sections */
+    section{ padding: 34px 0; }
+    .head{ display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:14px; }
+    h2{ margin:0; font-size: 20px; letter-spacing: -.2px; }
+    .sub{ margin: 6px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.7; max-width: 74ch; }
+
+    .grid{ display:grid; grid-template-columns: 1fr; gap: 12px; }
+    .service{ padding: 16px; }
+    .service h3{ margin: 0 0 6px; font-size: 16px; }
+    .service p{ margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+    .work{ padding: 14px; }
+    .work h3{ margin: 12px 0 6px; font-size: 15.5px; }
+    .meta{ margin:0; color: var(--faint); font-size: 13px; line-height: 1.55; }
+
+    /* Contact */
+    .contact{ padding: 16px; display:grid; grid-template-columns: 1fr; gap: 12px; }
+    form{ display:grid; gap: 10px; }
+    .row{ display:grid; grid-template-columns: 1fr; gap:10px; }
+    label{ font-size: 13px; color: var(--muted); }
+    input, textarea, select{
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.92);
+      color: var(--text);
+      padding: 11px 12px;
+      outline:none;
+      font-size: 14px;
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(10,132,255,.40);
+      box-shadow: 0 0 0 4px rgba(10,132,255,.12);
+    }
+    .note{ margin: 8px 0 0; color: var(--faint); font-size: 13px; line-height: 1.65; }
+
+    footer{
+      padding: 22px 0 40px;
+      color: var(--faint);
+      border-top: 1px solid rgba(0,0,0,.10);
+      margin-top: 6px;
+      background: rgba(255,255,255,.55);
+    }
+    .foot{ display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap; align-items:center; }
+    .foot a{
+      color: var(--muted);
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(0,0,0,.02);
+    }
+    .foot a:hover{ color: var(--text); background: rgba(0,0,0,.04); }
+
+    @media (min-width: 980px){
+      .wrap{ width:min(var(--max), calc(100% - 56px)); }
+      .menu{ display:flex; }
+      .hamburger{ display:none; }
+
+      .hero{ padding: 70px 0 22px; }
+      .heroGrid{ grid-template-columns: 1.08fr .92fr; gap: 18px; }
+      .strip{ grid-template-columns: repeat(3, 1fr); }
+
+      section{ padding: 48px 0; }
+      .grid{ grid-template-columns: repeat(12, 1fr); gap: 14px; }
+      .service{ grid-column: span 4; }
+      .work{ grid-column: span 4; }
+      .contact{ grid-template-columns: 1.05fr .95fr; padding: 18px; }
+      h2{ font-size: 22px; }
+      .row{ grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Thanks — message sent.</h1>
-      <p>We’ll reply to your email.</p>
-      <p><a href="/">Back to home</a></p>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Studio Name</span>
+      </a>
+
+      <nav class="menu" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer">Showreel</a>
+      </nav>
+
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="btn primary" href="#contact">Get a quote</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16v2H4V7zm0 8h16v2H4v-2zm0-4h16v2H4v-2z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
+
+    <div class="mobile" id="mobilePanel">
+      <div class="wrap">
+        <a class="mLink" href="#services">Services</a>
+        <a class="mLink" href="#work">Work</a>
+        <a class="mLink" href="#contact">Contact</a>
+        <a class="mLink" href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer">Showreel (YouTube)</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap heroGrid">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span> CGI + VFX for brands</div>
+
+          <h1>Minimal visuals. Maximum impact.</h1>
+          <p class="lead">
+            Premium CGI and VFX videos with clean compositing, strong lighting, and proper finishing.
+            Built for ads, products, and campaigns.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="#contact">Start a project</a>
+            <a class="btn" href="#work">View work</a>
+            <a class="btn ghost" href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer">Watch showreel</a>
+          </div>
+
+          <div class="strip">
+            <div class="stripItem">
+              <b>Fast first cut</b>
+              <span>Typical first cut in 3–10 days (depends on shot complexity).</span>
+            </div>
+            <div class="stripItem">
+              <b>Clean pipeline</b>
+              <span>Clear milestones, fewer revisions, predictable delivery.</span>
+            </div>
+            <div class="stripItem">
+              <b>Campaign-ready</b>
+              <span>Exports for web/social/broadcast — 4K/8K when needed.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card reel" aria-label="Showreel">
+          <div class="reelTop">
+            <div>
+              <b>Showreel</b><br/>
+              <span style="color:var(--faint);font-size:13px;">Embedded reel</span>
+            </div>
+            <span class="chip">YouTube</span>
+          </div>
+
+          <div class="embed">
+            <iframe
+              src="https://www.youtube.com/embed/j8CeqPwukWk?rel=0&modestbranding=1"
+              title="Studio Showreel"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Product CGI</span>
+            <span class="tag">VFX Compositing</span>
+            <span class="tag">Simulations</span>
+            <span class="tag">Finishing</span>
+          </div>
+
+          <p class="reelNote">Keep your reel updated or your site looks inactive.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Services</h2>
+            <p class="sub">Clear offerings. No filler.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card service">
+            <h3>Product CGI</h3>
+            <p>Photoreal renders and animation for launches, ads, and hero shots.</p>
+          </article>
+          <article class="card service">
+            <h3>VFX &amp; Compositing</h3>
+            <p>Tracking, cleanup, screen replacement, set extensions, match grade.</p>
+          </article>
+          <article class="card service">
+            <h3>3D Animation</h3>
+            <p>Cinematic motion and explainers with clean design and timing.</p>
+          </article>
+          <article class="card service">
+            <h3>Simulations</h3>
+            <p>Fluids, smoke, particles, cloth — art-directed and controlled.</p>
+          </article>
+          <article class="card service">
+            <h3>Color &amp; Finishing</h3>
+            <p>Consistent look across shots and platforms with correct deliverables.</p>
+          </article>
+          <article class="card service">
+            <h3>Creative Direction</h3>
+            <p>Styleframes, shot planning, boards — so production doesn’t drift.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2>Selected work</h2>
+            <p class="sub">Three videos embedded.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card work">
+            <div class="embed">
+              <iframe
+                src="https://www.youtube.com/embed/eFEZ5Db6cyY?rel=0&modestbranding=1"
+                title="Selected Work 1"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <h3>Selected Work — 01</h3>
+            <p class="meta">YouTube · eFEZ5Db6cyY</p>
+          </article>
+
+          <article class="card work">
+            <div class="embed">
+              <iframe
+                src="https://www.youtube.com/embed/7xrCC9E2vYM?rel=0&modestbranding=1"
+                title="Selected Work 2"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <h3>Selected Work — 02</h3>
+            <p class="meta">YouTube · 7xrCC9E2vYM</p>
+          </article>
+
+          <article class="card work">
+            <div class="embed">
+              <iframe
+                src="https://www.youtube.com/embed/F6wBOo22XVc?rel=0&modestbranding=1"
+                title="Selected Work 3"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <h3>Selected Work — 03</h3>
+            <p class="meta">YouTube · F6wBOo22XVc</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <article class="card contact">
+          <div>
+            <h2>Get a quote</h2>
+            <p class="sub">This sends to your Gmail without accounts. First submission will trigger a one-time email confirmation.</p>
+            <p class="note">
+              Email: <a href="mailto:YOUR_GMAIL@gmail.com" style="text-decoration:underline;color:var(--accent);">YOUR_GMAIL@gmail.com</a><br/>
+              Location: Your City · Remote worldwide
+            </p>
+          </div>
+
+          <!-- FormSubmit: replace YOUR_GMAIL@gmail.com and YOUR-DOMAIN -->
+          <form action="https://formsubmit.co/YOUR_GMAIL@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New CGI/VFX inquiry from your website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_next" value="https://YOUR-DOMAIN.com/thanks.html">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="timeline">Timeline</label>
+                <select id="timeline" name="timeline" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>ASAP (1–3 days)</option>
+                  <option>1 week</option>
+                  <option>2–4 weeks</option>
+                  <option>1–2 months</option>
+                  <option>Flexible</option>
+                </select>
+              </div>
+              <div>
+                <label for="budget">Budget range</label>
+                <select id="budget" name="budget" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>Under $500</option>
+                  <option>$500–$2,000</option>
+                  <option>$2,000–$5,000</option>
+                  <option>$5,000–$10,000</option>
+                  <option>$10,000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="briefLink">Brief / references link (optional)</label>
+              <input id="briefLink" name="briefLink" placeholder="Google Drive / Notion / YouTube / Dropbox link" />
+            </div>
+
+            <div>
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" placeholder="What are you making? Duration? Style refs? Deliverables?" required></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Send inquiry</button>
+
+            <p class="note">
+              Replace <b>YOUR_GMAIL@gmail.com</b> and <b>https://YOUR-DOMAIN.com/thanks.html</b> before deploying.
+            </p>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="brand" style="gap:10px;">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Studio Name</span>
+        <span style="color:var(--faint);font-size:13px;">© <span id="y"></span></span>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer">Showreel</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const btn = document.getElementById("hamburger");
+    const panel = document.getElementById("mobilePanel");
+    const links = document.querySelectorAll(".mLink");
+
+    function closeMenu(){ panel.style.display="none"; btn.setAttribute("aria-expanded","false"); }
+    btn.addEventListener("click", () => {
+      const open = panel.style.display === "block";
+      panel.style.display = open ? "none" : "block";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+    });
+    links.forEach(a => a.addEventListener("click", closeMenu));
+    window.addEventListener("resize", () => { if (window.innerWidth >= 980) closeMenu(); });
+  </script>
 </body>
 </html>
