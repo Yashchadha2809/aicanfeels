@@ -3,29 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Studio Name — CGI & VFX Videos</title>
-  <meta name="description" content="CGI and VFX videos for brands, products, and campaigns. Premium visuals with a clean, reliable pipeline." />
-  <meta name="theme-color" content="#0b0b0f" />
+  <title>Studio Name — CGI & VFX</title>
+  <meta name="description" content="CGI and VFX videos for brands. Product CGI, compositing, simulations, and cinematic motion." />
+  <meta name="theme-color" content="#0a0a0f" />
 
   <style>
     :root{
-      /* Cinematic, premium: neutral blacks + subtle warm highlight */
-      --bg:#09090c;
-      --bg2:#0f0f15;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.085);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.68);
-      --faint: rgba(255,255,255,.48);
+      /* Premium, minimal: near-black + off-white + one strong accent */
+      --bg: #07070b;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.085);
       --line: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.66);
+      --faint: rgba(255,255,255,.46);
 
-      --accent: #ffb000;      /* warm highlight */
-      --accent2:#7dd3fc;      /* soft cool secondary (minimal use) */
+      --accent: #a78bfa; /* violet */
+      --accent2:#22d3ee; /* cyan (tiny use) */
 
       --radius: 18px;
       --radius2: 26px;
-      --shadow: 0 18px 55px rgba(0,0,0,.55);
-      --max: 1120px;
+      --shadow: 0 20px 60px rgba(0,0,0,.55);
+      --max: 1140px;
     }
 
     *{ box-sizing:border-box; }
@@ -35,9 +34,10 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
       background:
-        radial-gradient(900px 600px at 15% 10%, rgba(255,176,0,.14), transparent 60%),
-        radial-gradient(900px 600px at 80% 20%, rgba(125,211,252,.10), transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+        radial-gradient(900px 600px at 20% 10%, rgba(167,139,250,.20), transparent 60%),
+        radial-gradient(900px 600px at 80% 15%, rgba(34,211,238,.12), transparent 55%),
+        radial-gradient(900px 600px at 50% 95%, rgba(167,139,250,.10), transparent 55%),
+        linear-gradient(180deg, #05050a, var(--bg));
       overflow-x:hidden;
     }
 
@@ -46,9 +46,9 @@
 
     /* Header */
     header{
-      position: sticky; top:0; z-index:50;
+      position: sticky; top:0; z-index: 50;
+      background: rgba(7,7,11,.55);
       backdrop-filter: blur(14px);
-      background: rgba(9,9,12,.55);
       border-bottom: 1px solid var(--line);
     }
     .nav{
@@ -58,29 +58,25 @@
     }
     .brand{
       display:flex; align-items:center; gap:10px;
-      font-weight: 750;
+      font-weight: 780;
       letter-spacing: .2px;
       white-space: nowrap;
     }
-    .logo{
-      width: 34px; height: 34px; border-radius: 12px;
+    .mark{
+      width: 34px; height: 34px;
+      border-radius: 12px;
       background:
-        radial-gradient(circle at 35% 35%, rgba(255,255,255,.85), rgba(255,255,255,.14) 40%, transparent 60%),
-        linear-gradient(135deg, rgba(255,176,0,.95), rgba(255,255,255,.08));
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.9), rgba(255,255,255,.15) 35%, transparent 60%),
+        linear-gradient(135deg, rgba(167,139,250,.95), rgba(34,211,238,.55));
       border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 14px 40px rgba(255,176,0,.12);
+      box-shadow: 0 16px 44px rgba(167,139,250,.14);
     }
 
-    /* Desktop nav */
-    .menu{
-      display:none;
-      gap: 10px;
-      align-items:center;
-    }
+    .menu{ display:none; align-items:center; gap: 8px; }
     .menu a{
       font-size: 14px;
       color: var(--muted);
-      padding: 8px 10px;
+      padding: 9px 10px;
       border-radius: 12px;
       transition: .2s ease;
     }
@@ -95,14 +91,14 @@
       color: var(--text);
       font-size: 14px;
       transition: .2s ease;
-      cursor: pointer;
+      cursor:pointer;
       user-select:none;
       box-shadow: 0 12px 28px rgba(0,0,0,.35);
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.085); }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
     .btn.primary{
-      border-color: rgba(255,176,0,.45);
-      background: linear-gradient(135deg, rgba(255,176,0,.95), rgba(255,255,255,.07));
+      border-color: rgba(167,139,250,.50);
+      background: linear-gradient(135deg, rgba(167,139,250,.95), rgba(34,211,238,.35));
     }
     .btn.primary:hover{ filter: brightness(1.03); }
     .btn.ghost{
@@ -110,11 +106,9 @@
       background: transparent;
     }
 
-    /* Mobile nav */
     .hamburger{
       display:inline-flex;
-      align-items:center;
-      justify-content:center;
+      align-items:center; justify-content:center;
       width: 42px; height: 42px;
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,.14);
@@ -122,17 +116,14 @@
       cursor:pointer;
     }
     .hamburger svg{ width: 20px; height: 20px; fill: rgba(255,255,255,.88); }
-    .mobile-panel{
+
+    .mobile{
       display:none;
       border-top: 1px solid var(--line);
-      background: rgba(9,9,12,.72);
+      background: rgba(7,7,11,.70);
     }
-    .mobile-panel .wrap{
-      padding: 10px 0 14px;
-      display:grid;
-      gap: 10px;
-    }
-    .mobile-panel a{
+    .mobile .wrap{ padding: 10px 0 14px; display:grid; gap: 10px; }
+    .mobile a{
       padding: 12px 12px;
       border-radius: 14px;
       background: rgba(255,255,255,.05);
@@ -143,65 +134,58 @@
 
     /* Hero */
     .hero{
-      padding: 42px 0 18px;  /* mobile-first */
+      padding: 42px 0 18px; /* mobile-first */
     }
-    .hero-grid{
+    .heroGrid{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 16px;
-      align-items: stretch;
+      gap: 14px;
+      align-items: start;
     }
-    .pill{
-      display:inline-flex; align-items:center; gap: 8px;
-      padding: 7px 12px;
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      width: fit-content;
+      padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.05);
       color: var(--muted);
       font-size: 13px;
-      width: fit-content;
     }
-    .dot{
-      width: 8px; height: 8px; border-radius: 50%;
+    .pulse{
+      width: 8px; height: 8px; border-radius: 99px;
       background: var(--accent);
-      box-shadow: 0 0 18px rgba(255,176,0,.25);
+      box-shadow: 0 0 18px rgba(167,139,250,.25);
     }
+
     h1{
       margin: 12px 0 10px;
-      font-size: clamp(30px, 5.4vw, 54px);
-      line-height: 1.06;
-      letter-spacing: -0.9px;
+      font-size: clamp(30px, 5.4vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -1px;
     }
     .lead{
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.65;
-      max-width: 62ch;
+      line-height: 1.7;
+      max-width: 64ch;
     }
-    .hero-actions{
+    .actions{
       display:flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 14px;
+      margin: 14px 0 10px;
     }
 
-    .hero-metrics{
+    .cardsRow{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 10px;
+      gap: 12px;
       margin-top: 14px;
     }
-    .metric{
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      padding: 12px 14px;
-    }
-    .metric b{ display:block; font-size: 15px; }
-    .metric span{ color: var(--faint); font-size: 13px; }
-
-    /* Cards */
     .card{
       border-radius: var(--radius2);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
@@ -209,20 +193,25 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
+    .mini{
+      padding: 14px 14px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .mini b{ display:block; font-size: 14.5px; }
+    .mini span{ display:block; margin-top: 4px; color: var(--faint); font-size: 13px; line-height: 1.5; }
 
-    /* Showreel card */
+    /* Showreel: real embed, responsive, looks clean */
     .reel{
-      padding: 16px;
-      display:grid;
-      gap: 12px;
+      padding: 14px;
     }
-    .reel-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
+    .reelTop{
+      display:flex; align-items:center; justify-content:space-between; gap: 12px;
+      margin-bottom: 10px;
     }
-    .badge{
+    .reelTop b{ font-size: 15px; }
+    .chip{
       font-size: 12px;
       padding: 6px 10px;
       border-radius: 999px;
@@ -231,55 +220,53 @@
       color: rgba(255,255,255,.78);
       white-space: nowrap;
     }
-    .player{
+    .embed{
+      position: relative;
+      width: 100%;
       aspect-ratio: 16 / 9;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.14);
       overflow:hidden;
-      position:relative;
-      background:
-        radial-gradient(420px 260px at 30% 30%, rgba(255,176,0,.18), transparent 60%),
-        radial-gradient(520px 300px at 80% 80%, rgba(125,211,252,.10), transparent 60%),
-        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
     }
-    .player a{
+    .embed iframe{
       position:absolute; inset:0;
-      display:grid;
-      place-items:center;
+      width:100%; height:100%;
+      border:0;
     }
-    .playbtn{
-      width: 72px; height: 72px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 50px rgba(0,0,0,.45);
-      display:grid; place-items:center;
-      transition: .2s ease;
+    .reelMeta{
+      display:flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 10px;
     }
-    .player a:hover .playbtn{ transform: scale(1.03); background: rgba(0,0,0,.45); }
-    .playbtn svg{ width: 26px; height: 26px; fill:#fff; transform: translateX(1px); }
+    .tag{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.75);
+    }
+    .reelNote{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
     /* Sections */
-    section{ padding: 34px 0; } /* more mobile-friendly spacing */
-    .section-title{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 14px;
+    section{ padding: 34px 0; }
+    .head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 12px;
       margin-bottom: 14px;
     }
-    h2{
-      margin:0;
-      font-size: 20px;
-      letter-spacing: -.2px;
-    }
+    h2{ margin:0; font-size: 20px; letter-spacing: -.2px; }
     .sub{
       margin: 6px 0 0;
       color: var(--muted);
-      line-height: 1.6;
       font-size: 14.5px;
-      max-width: 72ch;
+      line-height: 1.65;
+      max-width: 74ch;
     }
 
     .grid{
@@ -287,21 +274,11 @@
       grid-template-columns: 1fr;
       gap: 12px;
     }
-
     .service{
       padding: 16px;
     }
     .service h3{ margin: 0 0 6px; font-size: 16px; }
-    .service p{ margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
-    .service .tagrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
-    .tag{
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(255,255,255,.72);
-    }
+    .service p{ margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 
     .work{
       padding: 14px;
@@ -310,8 +287,8 @@
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,.12);
       background:
-        radial-gradient(320px 220px at 25% 25%, rgba(255,176,0,.16), transparent 60%),
-        radial-gradient(420px 260px at 85% 85%, rgba(125,211,252,.09), transparent 60%),
+        radial-gradient(320px 220px at 20% 25%, rgba(167,139,250,.18), transparent 60%),
+        radial-gradient(420px 260px at 85% 85%, rgba(34,211,238,.10), transparent 60%),
         linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
       aspect-ratio: 16/10;
       margin-bottom: 12px;
@@ -340,37 +317,52 @@
     }
     textarea{ min-height: 110px; resize: vertical; }
     input:focus, textarea:focus{
-      border-color: rgba(255,176,0,.55);
-      box-shadow: 0 0 0 4px rgba(255,176,0,.14);
+      border-color: rgba(167,139,250,.55);
+      box-shadow: 0 0 0 4px rgba(167,139,250,.16);
     }
-    .note{ color: var(--faint); font-size: 13px; line-height: 1.55; margin: 8px 0 0; }
+    .note{
+      margin: 8px 0 0;
+      color: var(--faint);
+      font-size: 13px;
+      line-height: 1.6;
+    }
 
     footer{
       padding: 22px 0 40px;
       color: var(--faint);
       border-top: 1px solid var(--line);
-      margin-top: 10px;
+      margin-top: 6px;
     }
     .foot{
       display:flex; justify-content:space-between; gap: 12px;
       flex-wrap:wrap; align-items:center;
     }
-    .foot a{ color: var(--muted); font-size: 13px; padding: 8px 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); }
+    .foot a{
+      color: var(--muted);
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
     .foot a:hover{ color: var(--text); background: rgba(255,255,255,.07); }
 
-    /* Desktop enhancements */
-    @media (min-width: 860px){
-      .wrap{ width:min(var(--max), calc(100% - 48px)); }
+    /* Desktop */
+    @media (min-width: 920px){
+      .wrap{ width:min(var(--max), calc(100% - 56px)); }
       .menu{ display:flex; }
       .hamburger{ display:none; }
-      .hero{ padding: 62px 0 18px; }
-      .hero-grid{ grid-template-columns: 1.1fr .9fr; gap: 20px; }
-      .hero-metrics{ grid-template-columns: repeat(3, 1fr); }
-      section{ padding: 44px 0; }
+
+      .hero{ padding: 64px 0 22px; }
+      .heroGrid{ grid-template-columns: 1.05fr .95fr; gap: 18px; }
+      .cardsRow{ grid-template-columns: repeat(3, 1fr); }
+
+      section{ padding: 46px 0; }
       .grid{ grid-template-columns: repeat(12, 1fr); gap: 14px; }
       .service{ grid-column: span 4; }
       .work{ grid-column: span 4; }
       .contact{ grid-template-columns: 1.05fr .95fr; padding: 18px; }
+      h2{ font-size: 22px; }
     }
   </style>
 </head>
@@ -379,7 +371,7 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="#">
-        <span class="logo" aria-hidden="true"></span>
+        <span class="mark" aria-hidden="true"></span>
         <span>Studio Name</span>
       </a>
 
@@ -399,65 +391,80 @@
       </div>
     </div>
 
-    <div class="mobile-panel" id="mobilePanel">
+    <div class="mobile" id="mobilePanel">
       <div class="wrap">
-        <a href="#services" class="mLink">Services</a>
-        <a href="#work" class="mLink">Work</a>
-        <a href="#contact" class="mLink">Contact</a>
+        <a class="mLink" href="#services">Services</a>
+        <a class="mLink" href="#work">Work</a>
+        <a class="mLink" href="#contact">Contact</a>
+        <a class="mLink" href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer">Showreel (YouTube)</a>
       </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="wrap hero-grid">
+      <div class="wrap heroGrid">
         <div>
-          <div class="pill"><span class="dot" aria-hidden="true"></span> CGI + VFX videos for brands</div>
-          <h1>Premium CGI & VFX that looks real, not “cheap 3D”.</h1>
+          <div class="kicker"><span class="pulse" aria-hidden="true"></span> CGI + VFX for ads, products, and campaigns</div>
+
+          <h1>Make visuals that look expensive and feel real.</h1>
           <p class="lead">
-            Product CGI, VFX compositing, and 3D animation built for campaigns and conversions.
-            Clear milestones, fast feedback loops, clean delivery.
+            We build premium CGI and VFX videos with a clean pipeline and clear milestones.
+            If you need “cheap and fast”, don’t hire us. If you need “good and reliable”, do.
           </p>
 
-          <div class="hero-actions">
+          <div class="actions">
             <a class="btn primary" href="#contact">Start a project</a>
-            <a class="btn" href="#work">View work</a>
+            <a class="btn" href="#work">See work</a>
             <a class="btn ghost" href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer">Watch showreel</a>
           </div>
 
-          <div class="hero-metrics">
-            <div class="metric"><b>3–10 days</b><span>Typical first cut</span></div>
-            <div class="metric"><b>4K / 8K</b><span>Delivery-ready</span></div>
-            <div class="metric"><b>Shot-based pricing</b><span>No surprise costs</span></div>
+          <div class="cardsRow">
+            <div class="mini">
+              <b>Fast first cut</b>
+              <span>Typically 3–10 days depending on shots and complexity.</span>
+            </div>
+            <div class="mini">
+              <b>Shot-based pricing</b>
+              <span>Clear scope. No surprise “extra work” invoices.</span>
+            </div>
+            <div class="mini">
+              <b>Campaign-ready</b>
+              <span>Exports for web, social, broadcast — 4K/8K when needed.</span>
+            </div>
           </div>
         </div>
 
         <aside class="card reel" aria-label="Showreel">
-          <div class="reel-head">
+          <div class="reelTop">
             <div>
-              <b style="display:block;font-size:15px;">Showreel</b>
-              <span style="color:var(--faint);font-size:13px;">Your latest work in one minute.</span>
+              <b>Showreel</b><br/>
+              <span style="color:var(--faint);font-size:13px;">Latest reel (embedded)</span>
             </div>
-            <span class="badge">YouTube</span>
+            <span class="chip">YouTube</span>
           </div>
 
-          <div class="player">
-            <a href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer" aria-label="Open showreel on YouTube">
-              <div class="playbtn" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-            </a>
+          <div class="embed">
+            <!-- YouTube embed for j8CeqPwukWk -->
+            <iframe
+              src="https://www.youtube.com/embed/j8CeqPwukWk?rel=0&modestbranding=1"
+              title="Studio Showreel"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
           </div>
 
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <div class="reelMeta">
             <span class="tag">Product CGI</span>
             <span class="tag">VFX Compositing</span>
-            <span class="tag">3D Animation</span>
+            <span class="tag">Simulations</span>
             <span class="tag">Finishing</span>
           </div>
 
-          <p style="margin:0;color:var(--muted);line-height:1.6;font-size:14px;">
-            If people can’t see your best work instantly, they leave. This section fixes that.
+          <p class="reelNote">
+            Keep this reel updated. A stale reel makes you look inactive.
           </p>
         </aside>
       </div>
@@ -465,60 +472,42 @@
 
     <section id="services">
       <div class="wrap">
-        <div class="section-title">
+        <div class="head">
           <div>
             <h2>Services</h2>
-            <p class="sub">Pick what you need. We can deliver single shots or full end-to-end videos.</p>
+            <p class="sub">Focused services that actually matter for production. No fluff.</p>
           </div>
         </div>
 
         <div class="grid">
           <article class="card service">
             <h3>Product CGI</h3>
-            <p>Photoreal renders and animation that sells product features without boring footage.</p>
-            <div class="tagrow">
-              <span class="tag">Lookdev</span><span class="tag">Lighting</span><span class="tag">Rendering</span>
-            </div>
+            <p>Photoreal renders + animation for launches, ads, and hero shots.</p>
           </article>
 
           <article class="card service">
             <h3>VFX & Compositing</h3>
-            <p>Tracking, cleanup, screen replacement, set extensions, match-grade—seamless integration.</p>
-            <div class="tagrow">
-              <span class="tag">Matchmove</span><span class="tag">Cleanup</span><span class="tag">Comp</span>
-            </div>
+            <p>Tracking, cleanup, screen replacement, set extensions, match grade.</p>
           </article>
 
           <article class="card service">
             <h3>3D Animation</h3>
-            <p>Explainers and cinematic sequences with strong timing and clean motion design.</p>
-            <div class="tagrow">
-              <span class="tag">Motion</span><span class="tag">Cameras</span><span class="tag">Layout</span>
-            </div>
+            <p>Motion systems, camera work, and cinematic sequences with taste.</p>
           </article>
 
           <article class="card service">
             <h3>Simulations</h3>
-            <p>Fluids, smoke, particles, cloth—art-directed results, not “random sim output”.</p>
-            <div class="tagrow">
-              <span class="tag">Fluids</span><span class="tag">Smoke</span><span class="tag">Particles</span>
-            </div>
+            <p>Fluids, smoke, cloth, particles — art-directed and controlled.</p>
           </article>
 
           <article class="card service">
             <h3>Color & Finishing</h3>
-            <p>Consistency across shots and platforms with proper deliverables for ads and broadcast.</p>
-            <div class="tagrow">
-              <span class="tag">Grade</span><span class="tag">Mastering</span><span class="tag">Exports</span>
-            </div>
+            <p>Consistency, polish, mastering, and platform deliverables.</p>
           </article>
 
           <article class="card service">
             <h3>Creative Direction</h3>
-            <p>Storyboards, styleframes, shot planning—so production doesn’t drift and waste budget.</p>
-            <div class="tagrow">
-              <span class="tag">Boards</span><span class="tag">Style</span><span class="tag">Planning</span>
-            </div>
+            <p>Boards, styleframes, shot planning — so the video doesn’t drift.</p>
           </article>
         </div>
       </div>
@@ -526,10 +515,10 @@
 
     <section id="work">
       <div class="wrap">
-        <div class="section-title">
+        <div class="head">
           <div>
             <h2>Selected work</h2>
-            <p class="sub">Replace these placeholders with real projects and thumbnails. This is what converts clients.</p>
+            <p class="sub">These are placeholders. Replace them with real projects and thumbnails.</p>
           </div>
           <a class="btn" href="#contact">Request full portfolio</a>
         </div>
@@ -544,12 +533,12 @@
           <article class="card work">
             <div class="thumb" aria-hidden="true"></div>
             <h3>Live-Action VFX Composite</h3>
-            <p class="meta">Tracking · cleanup · comp · grade match</p>
+            <p class="meta">Tracking · cleanup · comp · match grade</p>
           </article>
 
           <article class="card work">
             <div class="thumb" aria-hidden="true"></div>
-            <h3>Simulation / FX Spot</h3>
+            <h3>FX / Simulation Spot</h3>
             <p class="meta">Fluids · particles · shading · finishing</p>
           </article>
         </div>
@@ -561,13 +550,13 @@
         <article class="card contact">
           <div>
             <h2>Get a quote</h2>
-            <p class="sub">Send a short brief. If you include budget + deadline, you’ll get faster answers.</p>
+            <p class="sub">Send your brief. Include deadline + budget range if you want a serious response.</p>
             <p class="note">
               Email: <a href="mailto:hello@yourstudio.com" style="text-decoration:underline;">hello@yourstudio.com</a><br/>
               Location: Your City · Remote worldwide
             </p>
             <p class="note">
-              Brutal truth: clients don’t care about “we do everything”. They care about results and proof. Add real work thumbnails next.
+              Brutal truth: your website won’t convert until your “Work” section has real projects. Do that next.
             </p>
           </div>
 
@@ -585,10 +574,7 @@
               <textarea id="message" name="message" placeholder="What are you making? Duration? References? Deadline? Budget range?" required></textarea>
             </div>
             <button class="btn primary" type="submit">Send inquiry</button>
-
-            <p class="note">
-              Mailto forms rely on the visitor’s email app. For a professional site, switch to a real form endpoint.
-            </p>
+            <p class="note">Mailto depends on the visitor’s email app. For professional lead capture, use a real form endpoint.</p>
           </form>
         </article>
       </div>
@@ -598,7 +584,7 @@
   <footer>
     <div class="wrap foot">
       <div class="brand" style="gap:10px;">
-        <span class="logo" aria-hidden="true"></span>
+        <span class="mark" aria-hidden="true"></span>
         <span>Studio Name</span>
         <span style="color:var(--faint);font-size:13px;">© <span id="y"></span></span>
       </div>
@@ -611,10 +597,8 @@
   </footer>
 
   <script>
-    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Mobile menu
     const btn = document.getElementById("hamburger");
     const panel = document.getElementById("mobilePanel");
     const links = document.querySelectorAll(".mLink");
@@ -623,17 +607,13 @@
       panel.style.display = "none";
       btn.setAttribute("aria-expanded", "false");
     }
-
     btn.addEventListener("click", () => {
       const open = panel.style.display === "block";
       panel.style.display = open ? "none" : "block";
       btn.setAttribute("aria-expanded", open ? "false" : "true");
     });
-
     links.forEach(a => a.addEventListener("click", closeMenu));
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 860) closeMenu();
-    });
+    window.addEventListener("resize", () => { if (window.innerWidth >= 920) closeMenu(); });
   </script>
 </body>
 </html>
