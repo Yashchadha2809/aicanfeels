@@ -10,13 +10,10 @@
   <style>
     :root{
       --bg:#ffffff; --bg2:#f5f5f7;
-      --border: rgba(0,0,0,.10);
-      --text: rgba(0,0,0,.90);
-      --muted: rgba(0,0,0,.62);
-      --faint: rgba(0,0,0,.46);
+      --border:rgba(0,0,0,.1);
+      --text:#111; --muted:#666;
       --accent:#0a84ff;
-      --radius:18px; --radius2:26px;
-      --shadow:0 20px 60px rgba(0,0,0,.10);
+      --radius:18px; --shadow:0 20px 60px rgba(0,0,0,.1);
       --max:1120px;
     }
     *{box-sizing:border-box}
@@ -26,59 +23,43 @@
       color:var(--text)
     }
     a{text-decoration:none;color:inherit}
-    .wrap{width:min(var(--max),calc(100% - 32px));margin:0 auto}
-
+    .wrap{width:min(var(--max),calc(100% - 32px));margin:auto}
     header{
       position:sticky;top:0;z-index:10;
-      background:rgba(255,255,255,.8);
+      background:rgba(255,255,255,.85);
       backdrop-filter:blur(12px);
       border-bottom:1px solid var(--border)
     }
     .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
     .brand{font-weight:700;font-size:18px}
-
     .btn{
       padding:12px 16px;border-radius:14px;
       border:1px solid var(--border);
-      background:rgba(0,0,0,.04);
-      font-size:14px;cursor:pointer
+      background:#f1f1f1;font-size:14px;cursor:pointer
     }
-    .btn.primary{
-      background:var(--accent);color:#fff;border:none
-    }
-
-    section{padding:48px 0}
-    h1{font-size:clamp(32px,5vw,56px);margin:0 0 12px}
-    h2{margin:0 0 8px}
+    .btn.primary{background:var(--accent);color:#fff;border:none}
+    section{padding:56px 0}
+    h1{font-size:clamp(34px,5vw,56px);margin:0 0 12px}
+    h2{margin:0 0 12px}
     .lead{color:var(--muted);max-width:640px}
-
-    .grid{display:grid;gap:16px}
-    @media(min-width:900px){
-      .grid{grid-template-columns:repeat(3,1fr)}
-    }
-
+    .grid{display:grid;gap:18px}
+    @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
     .card{
-      background:#fff;border-radius:var(--radius2);
+      background:#fff;border-radius:24px;
       border:1px solid var(--border);
       box-shadow:var(--shadow);padding:16px
     }
-
     .embed{
       position:relative;width:100%;aspect-ratio:16/9;
       border-radius:16px;overflow:hidden;border:1px solid var(--border)
     }
     .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-
     form{display:grid;gap:12px}
     input,textarea,select{
-      padding:12px;border-radius:14px;border:1px solid var(--border);
-      font-size:14px;width:100%
+      width:100%;padding:12px;
+      border-radius:14px;border:1px solid var(--border);font-size:14px
     }
-
-    footer{
-      border-top:1px solid var(--border);
-      padding:32px 0;color:var(--faint)
-    }
+    footer{border-top:1px solid var(--border);padding:32px 0;color:#777}
   </style>
 </head>
 
@@ -93,7 +74,7 @@
 
 <main>
 
-<section class="hero">
+<section>
   <div class="wrap">
     <h1>Minimal visuals. Maximum impact.</h1>
     <p class="lead">
@@ -108,18 +89,9 @@
 
 <section>
   <div class="wrap grid">
-    <div class="card">
-      <strong>Fast delivery</strong>
-      <p class="lead">First cut in days, not weeks.</p>
-    </div>
-    <div class="card">
-      <strong>Clean visuals</strong>
-      <p class="lead">Lighting, materials, and compositing done right.</p>
-    </div>
-    <div class="card">
-      <strong>Campaign-ready</strong>
-      <p class="lead">Ads, socials, and product launches.</p>
-    </div>
+    <div class="card"><b>Fast delivery</b><p class="lead">First cut in days.</p></div>
+    <div class="card"><b>High-end look</b><p class="lead">Lighting, materials, compositing.</p></div>
+    <div class="card"><b>Ad ready</b><p class="lead">Social, web, broadcast exports.</p></div>
   </div>
 </section>
 
@@ -127,21 +99,9 @@
   <div class="wrap">
     <h2>Selected work</h2>
     <div class="grid" style="margin-top:16px">
-      <div class="card">
-        <div class="embed">
-          <iframe src="https://www.youtube.com/embed/eFEZ5Db6cyY" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="card">
-        <div class="embed">
-          <iframe src="https://www.youtube.com/embed/7xrCC9E2vYM" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="card">
-        <div class="embed">
-          <iframe src="https://www.youtube.com/embed/F6wBOo22XVc" allowfullscreen></iframe>
-        </div>
-      </div>
+      <div class="card"><div class="embed"><iframe src="https://www.youtube.com/embed/eFEZ5Db6cyY" allowfullscreen></iframe></div></div>
+      <div class="card"><div class="embed"><iframe src="https://www.youtube.com/embed/7xrCC9E2vYM" allowfullscreen></iframe></div></div>
+      <div class="card"><div class="embed"><iframe src="https://www.youtube.com/embed/F6wBOo22XVc" allowfullscreen></iframe></div></div>
     </div>
   </div>
 </section>
@@ -150,13 +110,10 @@
   <div class="wrap">
     <div class="card">
       <h2>Get a quote</h2>
-      <p class="lead">
-        Messages go directly to <b>ledgerdaddyusa@gmail.com</b>
-      </p>
+      <p class="lead">Messages go directly to <b>ledgerdaddyusa@gmail.com</b></p>
 
-      <!-- NO SIGNUP FORM (FormSubmit) -->
       <form action="https://formsubmit.co/ledgerdaddyusa@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New CGI/VFX Inquiry">
+        <input type="hidden" name="_subject" value="New CGI / VFX Inquiry">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="true">
         <input type="hidden" name="_next" value="/thanks.html">
@@ -164,13 +121,15 @@
 
         <input name="name" placeholder="Name" required>
         <input name="email" type="email" placeholder="Email" required>
+
         <select name="budget" required>
-          <option value="" disabled selected>Budget</option>
+          <option disabled selected>Budget</option>
           <option>Under $500</option>
           <option>$500–$2,000</option>
           <option>$2,000–$5,000</option>
           <option>$5,000+</option>
         </select>
+
         <textarea name="message" placeholder="Project details" required></textarea>
 
         <button class="btn primary" type="submit">Send inquiry</button>
@@ -183,7 +142,7 @@
 
 <footer>
   <div class="wrap">
-    © <span id="y"></span> Studio Name — ledgerdaddyusa@gmail.com
+    © <span id="y"></span> Studio Name · ledgerdaddyusa@gmail.com
   </div>
 </footer>
 
