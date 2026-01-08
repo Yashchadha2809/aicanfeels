@@ -4,173 +4,204 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Studio Name — CGI & VFX Videos</title>
-  <meta name="description" content="CGI and VFX videos for brands, products, and campaigns. High-end visuals, fast turnaround, clear communication." />
-
-  <meta property="og:title" content="Studio Name — CGI & VFX Videos" />
-  <meta property="og:description" content="CGI and VFX videos for brands, products, and campaigns." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0b0f1a" />
+  <meta name="description" content="CGI and VFX videos for brands, products, and campaigns. Premium visuals with a clean, reliable pipeline." />
+  <meta name="theme-color" content="#0b0b0f" />
 
   <style>
     :root{
-      --bg:#070A12;
-      --bg2:#0B1022;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.09);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --faint:rgba(255,255,255,.45);
-      --line:rgba(255,255,255,.12);
-      --accent:#7C5CFF;
-      --accent2:#2DE2E6;
-      --ok:#2ee59d;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      /* Cinematic, premium: neutral blacks + subtle warm highlight */
+      --bg:#09090c;
+      --bg2:#0f0f15;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.085);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --faint: rgba(255,255,255,.48);
+      --line: rgba(255,255,255,.12);
+
+      --accent: #ffb000;      /* warm highlight */
+      --accent2:#7dd3fc;      /* soft cool secondary (minimal use) */
+
       --radius: 18px;
       --radius2: 26px;
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
       --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
       background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(124,92,255,.25), transparent 55%),
-        radial-gradient(1000px 600px at 80% 20%, rgba(45,226,230,.18), transparent 52%),
-        radial-gradient(900px 500px at 50% 90%, rgba(124,92,255,.12), transparent 52%),
+        radial-gradient(900px 600px at 15% 10%, rgba(255,176,0,.14), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(125,211,252,.10), transparent 55%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       overflow-x:hidden;
     }
 
-    a{ color: inherit; text-decoration: none; }
-    .wrap{ width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
-    .blur-orb{
-      position:absolute; inset:auto;
-      width: 520px; height: 520px; filter: blur(60px);
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(124,92,255,.35), transparent 60%);
-      z-index:-1;
-    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
 
+    /* Header */
     header{
-      position: sticky; top:0;
-      backdrop-filter: blur(16px);
-      background: rgba(7,10,18,.55);
+      position: sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(9,9,12,.55);
       border-bottom: 1px solid var(--line);
-      z-index: 20;
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
-      padding: 14px 0;
-      gap: 18px;
+      gap: 14px;
+      padding: 12px 0;
     }
     .brand{
-      display:flex; align-items:center; gap: 10px;
-      font-weight: 700; letter-spacing: .2px;
+      display:flex; align-items:center; gap:10px;
+      font-weight: 750;
+      letter-spacing: .2px;
+      white-space: nowrap;
     }
     .logo{
       width: 34px; height: 34px; border-radius: 12px;
       background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.2) 35%, transparent 55%),
-        linear-gradient(135deg, rgba(124,92,255,.95), rgba(45,226,230,.75));
-      box-shadow: 0 12px 30px rgba(124,92,255,.22);
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.85), rgba(255,255,255,.14) 40%, transparent 60%),
+        linear-gradient(135deg, rgba(255,176,0,.95), rgba(255,255,255,.08));
       border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(255,176,0,.12);
     }
-    nav ul{
-      list-style:none; padding:0; margin:0;
-      display:flex; align-items:center; gap: 14px;
+
+    /* Desktop nav */
+    .menu{
+      display:none;
+      gap: 10px;
+      align-items:center;
     }
-    nav a{
+    .menu a{
       font-size: 14px;
       color: var(--muted);
-      padding: 9px 10px;
+      padding: 8px 10px;
       border-radius: 12px;
       transition: .2s ease;
     }
-    nav a:hover{ color: var(--text); background: rgba(255,255,255,.06); }
-    .cta{
-      display:flex; align-items:center; gap: 10px;
-    }
+    .menu a:hover{ color: var(--text); background: rgba(255,255,255,.06); }
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 11px 14px;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.06);
       color: var(--text);
       font-size: 14px;
       transition: .2s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
       cursor: pointer;
       user-select:none;
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.085); }
     .btn.primary{
-      border: 1px solid rgba(124,92,255,.45);
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(45,226,230,.55));
+      border-color: rgba(255,176,0,.45);
+      background: linear-gradient(135deg, rgba(255,176,0,.95), rgba(255,255,255,.07));
     }
-    .btn.primary:hover{ filter: brightness(1.05); }
+    .btn.primary:hover{ filter: brightness(1.03); }
+    .btn.ghost{
+      box-shadow:none;
+      background: transparent;
+    }
 
+    /* Mobile nav */
+    .hamburger{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      cursor:pointer;
+    }
+    .hamburger svg{ width: 20px; height: 20px; fill: rgba(255,255,255,.88); }
+    .mobile-panel{
+      display:none;
+      border-top: 1px solid var(--line);
+      background: rgba(9,9,12,.72);
+    }
+    .mobile-panel .wrap{
+      padding: 10px 0 14px;
+      display:grid;
+      gap: 10px;
+    }
+    .mobile-panel a{
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.86);
+      font-size: 14px;
+    }
+
+    /* Hero */
     .hero{
-      position:relative;
-      padding: 66px 0 28px;
+      padding: 42px 0 18px;  /* mobile-first */
     }
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 24px;
+      grid-template-columns: 1fr;
+      gap: 16px;
       align-items: stretch;
     }
     .pill{
       display:inline-flex; align-items:center; gap: 8px;
-      padding: 8px 12px;
+      padding: 7px 12px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.05);
       color: var(--muted);
       font-size: 13px;
       width: fit-content;
     }
     .dot{
       width: 8px; height: 8px; border-radius: 50%;
-      background: var(--ok);
-      box-shadow: 0 0 18px rgba(46,229,157,.35);
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(255,176,0,.25);
     }
     h1{
-      margin: 14px 0 12px;
-      font-size: clamp(34px, 4.4vw, 54px);
-      line-height: 1.03;
-      letter-spacing: -1px;
+      margin: 12px 0 10px;
+      font-size: clamp(30px, 5.4vw, 54px);
+      line-height: 1.06;
+      letter-spacing: -0.9px;
     }
     .lead{
-      margin: 0 0 22px;
+      margin: 0 0 18px;
       color: var(--muted);
-      font-size: 16.5px;
-      line-height: 1.6;
-      max-width: 58ch;
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 62ch;
     }
     .hero-actions{
-      display:flex; gap: 12px; flex-wrap: wrap;
-      margin-bottom: 18px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
     }
-    .stats{
-      display:flex; gap: 14px; flex-wrap: wrap;
-      padding-top: 10px;
-      border-top: 1px solid var(--line);
-      max-width: 640px;
-    }
-    .stat{
-      min-width: 150px;
-      padding: 12px 14px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .stat b{ display:block; font-size: 16px; }
-    .stat span{ color: var(--faint); font-size: 13px; }
 
+    .hero-metrics{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .metric{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 12px 14px;
+    }
+    .metric b{ display:block; font-size: 15px; }
+    .metric span{ color: var(--faint); font-size: 13px; }
+
+    /* Cards */
     .card{
       border-radius: var(--radius2);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
@@ -178,182 +209,130 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .reel{
-      padding: 18px;
-      display:flex; flex-direction:column; gap: 14px;
-      height: 100%;
-    }
-    .frame{
-      aspect-ratio: 16/9;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.14);
-      background:
-        radial-gradient(400px 220px at 20% 30%, rgba(124,92,255,.26), transparent 60%),
-        radial-gradient(500px 260px at 80% 70%, rgba(45,226,230,.18), transparent 60%),
-        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      position:relative;
-      overflow:hidden;
-    }
-    .play{
-      position:absolute; inset: 0;
-      display:grid; place-items:center;
-    }
-    .play button{
-      width: 68px; height: 68px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(10px);
-      cursor:pointer;
-      transition: .2s ease;
-      box-shadow: 0 18px 50px rgba(0,0,0,.4);
-    }
-    .play button:hover{ transform: scale(1.03); background: rgba(0,0,0,.45); }
-    .play svg{ width: 26px; height: 26px; fill: white; transform: translateX(1px); }
 
-    .reel small{ color: var(--faint); }
-    .reel-row{
-      display:flex; align-items:center; justify-content:space-between; gap: 12px;
-      padding: 12px 12px 0;
+    /* Showreel card */
+    .reel{
+      padding: 16px;
+      display:grid;
+      gap: 12px;
+    }
+    .reel-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
     }
     .badge{
       font-size: 12px;
-      color: rgba(255,255,255,.75);
       padding: 6px 10px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.78);
       white-space: nowrap;
     }
+    .player{
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      overflow:hidden;
+      position:relative;
+      background:
+        radial-gradient(420px 260px at 30% 30%, rgba(255,176,0,.18), transparent 60%),
+        radial-gradient(520px 300px at 80% 80%, rgba(125,211,252,.10), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+    }
+    .player a{
+      position:absolute; inset:0;
+      display:grid;
+      place-items:center;
+    }
+    .playbtn{
+      width: 72px; height: 72px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      display:grid; place-items:center;
+      transition: .2s ease;
+    }
+    .player a:hover .playbtn{ transform: scale(1.03); background: rgba(0,0,0,.45); }
+    .playbtn svg{ width: 26px; height: 26px; fill:#fff; transform: translateX(1px); }
 
-    section{ padding: 44px 0; }
+    /* Sections */
+    section{ padding: 34px 0; } /* more mobile-friendly spacing */
     .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap: 18px;
-      margin-bottom: 18px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 14px;
+      margin-bottom: 14px;
     }
     h2{
       margin:0;
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: -.2px;
     }
     .sub{
       margin: 6px 0 0;
       color: var(--muted);
-      line-height: 1.5;
-      max-width: 70ch;
+      line-height: 1.6;
       font-size: 14.5px;
+      max-width: 72ch;
     }
 
     .grid{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
+
     .service{
-      grid-column: span 4;
       padding: 16px;
     }
-    .service h3{ margin: 10px 0 6px; font-size: 16px; }
-    .service p{ margin:0; color: var(--muted); line-height: 1.55; font-size: 14px; }
-    .icon{
-      width: 40px; height: 40px; border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      display:grid; place-items:center;
+    .service h3{ margin: 0 0 6px; font-size: 16px; }
+    .service p{ margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
+    .service .tagrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .tag{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.72);
     }
-    .icon svg{ width: 20px; height: 20px; fill: rgba(255,255,255,.88); }
 
     .work{
-      grid-column: span 4;
       padding: 14px;
     }
     .thumb{
-      border-radius: 16px;
+      border-radius: 18px;
       border: 1px solid rgba(255,255,255,.12);
       background:
-        radial-gradient(300px 200px at 30% 20%, rgba(124,92,255,.25), transparent 60%),
-        radial-gradient(320px 220px at 80% 80%, rgba(45,226,230,.16), transparent 60%),
+        radial-gradient(320px 220px at 25% 25%, rgba(255,176,0,.16), transparent 60%),
+        radial-gradient(420px 260px at 85% 85%, rgba(125,211,252,.09), transparent 60%),
         linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
       aspect-ratio: 16/10;
       margin-bottom: 12px;
-      position:relative;
-      overflow:hidden;
-    }
-    .thumb::after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.10) 50%, transparent 60%);
-      transform: rotate(12deg);
-      animation: sheen 6s infinite linear;
-      opacity:.55;
-    }
-    @keyframes sheen{
-      0%{ transform: translateX(-20%) rotate(12deg); }
-      100%{ transform: translateX(20%) rotate(12deg); }
     }
     .work h3{ margin: 0 0 6px; font-size: 15.5px; }
-    .meta{ color: var(--faint); font-size: 13px; line-height: 1.45; margin: 0; }
+    .meta{ margin:0; color: var(--faint); font-size: 13px; line-height: 1.5; }
 
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: stretch;
-    }
-    .process, .test{
-      padding: 18px;
-    }
-    .steps{
-      display:grid; gap: 10px; margin-top: 10px;
-    }
-    .step{
-      display:flex; gap: 12px;
-      padding: 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-    }
-    .num{
-      width: 30px; height: 30px;
-      border-radius: 12px;
-      display:grid; place-items:center;
-      font-size: 13px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.85);
-      flex: 0 0 auto;
-    }
-    .step b{ display:block; font-size: 14px; margin-bottom: 2px; }
-    .step span{ color: var(--muted); font-size: 13.5px; line-height: 1.45; }
-
-    .quote{
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      margin-top: 12px;
-    }
-    .quote p{ margin:0; color: rgba(255,255,255,.86); line-height: 1.55; }
-    .quote small{ display:block; margin-top: 10px; color: var(--faint); }
-
+    /* Contact */
     .contact{
-      padding: 18px;
+      padding: 16px;
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 14px;
-      align-items: start;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
-    .contact h3{ margin: 0 0 6px; font-size: 18px; }
-    form{
-      display:grid; gap: 10px;
-    }
+    form{ display:grid; gap: 10px; }
     label{ font-size: 13px; color: var(--muted); }
     input, textarea{
       width: 100%;
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.20);
+      background: rgba(0,0,0,.22);
       color: var(--text);
       padding: 11px 12px;
       outline:none;
@@ -361,50 +340,37 @@
     }
     textarea{ min-height: 110px; resize: vertical; }
     input:focus, textarea:focus{
-      border-color: rgba(124,92,255,.55);
-      box-shadow: 0 0 0 4px rgba(124,92,255,.18);
+      border-color: rgba(255,176,0,.55);
+      box-shadow: 0 0 0 4px rgba(255,176,0,.14);
     }
-    .note{
-      color: var(--faint);
-      font-size: 13px;
-      line-height: 1.5;
-      margin: 8px 0 0;
-    }
+    .note{ color: var(--faint); font-size: 13px; line-height: 1.55; margin: 8px 0 0; }
 
     footer{
-      padding: 26px 0 40px;
+      padding: 22px 0 40px;
       color: var(--faint);
       border-top: 1px solid var(--line);
-      margin-top: 24px;
+      margin-top: 10px;
     }
     .foot{
-      display:flex; justify-content:space-between; gap: 14px; flex-wrap: wrap;
-      align-items:center;
+      display:flex; justify-content:space-between; gap: 12px;
+      flex-wrap:wrap; align-items:center;
     }
-    .links{ display:flex; gap: 10px; flex-wrap: wrap; }
-    .links a{
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .links a:hover{ color: var(--text); background: rgba(255,255,255,.07); }
+    .foot a{ color: var(--muted); font-size: 13px; padding: 8px 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); }
+    .foot a:hover{ color: var(--text); background: rgba(255,255,255,.07); }
 
-    /* Responsive */
-    @media (max-width: 960px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .contact{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .service{ grid-column: span 6; }
-      .work{ grid-column: span 6; }
-    }
-    @media (max-width: 640px){
-      nav ul{ display:none; }
-      .service{ grid-column: span 12; }
-      .work{ grid-column: span 12; }
-      .wrap{ width: min(var(--max), calc(100% - 28px)); }
+    /* Desktop enhancements */
+    @media (min-width: 860px){
+      .wrap{ width:min(var(--max), calc(100% - 48px)); }
+      .menu{ display:flex; }
+      .hamburger{ display:none; }
+      .hero{ padding: 62px 0 18px; }
+      .hero-grid{ grid-template-columns: 1.1fr .9fr; gap: 20px; }
+      .hero-metrics{ grid-template-columns: repeat(3, 1fr); }
+      section{ padding: 44px 0; }
+      .grid{ grid-template-columns: repeat(12, 1fr); gap: 14px; }
+      .service{ grid-column: span 4; }
+      .work{ grid-column: span 4; }
+      .contact{ grid-template-columns: 1.05fr .95fr; padding: 18px; }
     }
   </style>
 </head>
@@ -417,18 +383,27 @@
         <span>Studio Name</span>
       </a>
 
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <nav class="menu" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
       </nav>
 
-      <div class="cta">
-        <a class="btn" href="#work">View work</a>
+      <div style="display:flex; gap:10px; align-items:center;">
         <a class="btn primary" href="#contact">Get a quote</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16v2H4V7zm0 8h16v2H4v-2zm0-4h16v2H4v-2z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-panel" id="mobilePanel">
+      <div class="wrap">
+        <a href="#services" class="mLink">Services</a>
+        <a href="#work" class="mLink">Work</a>
+        <a href="#contact" class="mLink">Contact</a>
       </div>
     </div>
   </header>
@@ -437,53 +412,52 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="pill"><span class="dot" aria-hidden="true"></span> CGI + VFX videos for brands that want premium visuals</div>
-          <h1>High-end CGI & VFX videos that look expensive (because they are done properly).</h1>
+          <div class="pill"><span class="dot" aria-hidden="true"></span> CGI + VFX videos for brands</div>
+          <h1>Premium CGI & VFX that looks real, not “cheap 3D”.</h1>
           <p class="lead">
-            We create product CGI, VFX compositing, and full 3D commercials — built to sell, not just to look “cool”.
-            Fast feedback loops. Clean pipelines. No chaos.
+            Product CGI, VFX compositing, and 3D animation built for campaigns and conversions.
+            Clear milestones, fast feedback loops, clean delivery.
           </p>
 
           <div class="hero-actions">
             <a class="btn primary" href="#contact">Start a project</a>
-            <a class="btn" href="#services">See services</a>
+            <a class="btn" href="#work">View work</a>
+            <a class="btn ghost" href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer">Watch showreel</a>
           </div>
 
-          <div class="stats" role="list">
-            <div class="stat" role="listitem"><b>3–10 days</b><span>Typical first cut delivery</span></div>
-            <div class="stat" role="listitem"><b>CGI + Live Action</b><span>Integrated production</span></div>
-            <div class="stat" role="listitem"><b>4K / 8K</b><span>Broadcast-ready output</span></div>
+          <div class="hero-metrics">
+            <div class="metric"><b>3–10 days</b><span>Typical first cut</span></div>
+            <div class="metric"><b>4K / 8K</b><span>Delivery-ready</span></div>
+            <div class="metric"><b>Shot-based pricing</b><span>No surprise costs</span></div>
           </div>
         </div>
 
         <aside class="card reel" aria-label="Showreel">
-          <div class="reel-row">
+          <div class="reel-head">
             <div>
               <b style="display:block;font-size:15px;">Showreel</b>
-              <small>Replace with your real video link.</small>
+              <span style="color:var(--faint);font-size:13px;">Your latest work in one minute.</span>
             </div>
-            <span class="badge">2026</span>
+            <span class="badge">YouTube</span>
           </div>
 
-          <a class="frame" href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="Open showreel video">
-            <div class="play" aria-hidden="true">
-              <button type="button" aria-label="Play">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 5v14l11-7z"></path>
-                </svg>
-              </button>
-            </div>
-          </a>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <span class="badge">Product CGI</span>
-            <span class="badge">VFX Compositing</span>
-            <span class="badge">3D Animation</span>
-            <span class="badge">Simulations</span>
+          <div class="player">
+            <a href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer" aria-label="Open showreel on YouTube">
+              <div class="playbtn" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </a>
           </div>
 
-          <p style="margin:0;color:var(--muted);line-height:1.55;font-size:14px;padding:0 12px 6px;">
-            If your site doesn’t have a showreel above the fold, you’re wasting attention. Put your best 30–60 seconds here.
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="tag">Product CGI</span>
+            <span class="tag">VFX Compositing</span>
+            <span class="tag">3D Animation</span>
+            <span class="tag">Finishing</span>
+          </div>
+
+          <p style="margin:0;color:var(--muted);line-height:1.6;font-size:14px;">
+            If people can’t see your best work instantly, they leave. This section fixes that.
           </p>
         </aside>
       </div>
@@ -494,57 +468,57 @@
         <div class="section-title">
           <div>
             <h2>Services</h2>
-            <p class="sub">Choose what you actually need. We can execute a single shot or handle end-to-end production.</p>
+            <p class="sub">Pick what you need. We can deliver single shots or full end-to-end videos.</p>
           </div>
         </div>
 
         <div class="grid">
           <article class="card service">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM6 8v8h12V8z"/></svg>
-            </div>
             <h3>Product CGI</h3>
-            <p>Photo-real 3D product renders and animations for ads, launches, and social. Better lighting than real life.</p>
+            <p>Photoreal renders and animation that sells product features without boring footage.</p>
+            <div class="tagrow">
+              <span class="tag">Lookdev</span><span class="tag">Lighting</span><span class="tag">Rendering</span>
+            </div>
           </article>
 
           <article class="card service">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 2l4 8-4 12-4-12z"/></svg>
-            </div>
             <h3>VFX & Compositing</h3>
-            <p>Green screen, tracking, cleanup, matchmove, set extensions, and beauty work that doesn’t scream “VFX”.</p>
+            <p>Tracking, cleanup, screen replacement, set extensions, match-grade—seamless integration.</p>
+            <div class="tagrow">
+              <span class="tag">Matchmove</span><span class="tag">Cleanup</span><span class="tag">Comp</span>
+            </div>
           </article>
 
           <article class="card service">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 7h10v10H7zM3 3h4v4H3zM17 17h4v4h-4z"/></svg>
-            </div>
             <h3>3D Animation</h3>
-            <p>Explainers, brand films, character or abstract motion — built with strong timing, not random movement.</p>
+            <p>Explainers and cinematic sequences with strong timing and clean motion design.</p>
+            <div class="tagrow">
+              <span class="tag">Motion</span><span class="tag">Cameras</span><span class="tag">Layout</span>
+            </div>
           </article>
 
           <article class="card service">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8zm0 2a6 6 0 100 12 6 6 0 000-12z"/></svg>
-            </div>
             <h3>Simulations</h3>
-            <p>Fluids, smoke, particles, cloth, destruction — controlled chaos with art direction, not “whatever the sim does”.</p>
+            <p>Fluids, smoke, particles, cloth—art-directed results, not “random sim output”.</p>
+            <div class="tagrow">
+              <span class="tag">Fluids</span><span class="tag">Smoke</span><span class="tag">Particles</span>
+            </div>
           </article>
 
           <article class="card service">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 20V4h16v16H4zm2-2h12V6H6v12z"/></svg>
-            </div>
             <h3>Color & Finishing</h3>
-            <p>Color matching, grading, delivery specs, and final polish so your video looks consistent everywhere.</p>
+            <p>Consistency across shots and platforms with proper deliverables for ads and broadcast.</p>
+            <div class="tagrow">
+              <span class="tag">Grade</span><span class="tag">Mastering</span><span class="tag">Exports</span>
+            </div>
           </article>
 
           <article class="card service">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 110 4 2 2 0 010-4zm-7 14v-2c0-3.3 6-5 7-5s7 1.7 7 5v2H5z"/></svg>
-            </div>
             <h3>Creative Direction</h3>
-            <p>Storyboards, shot planning, styleframes, and clear decisions early — the difference between “nice” and “wow”.</p>
+            <p>Storyboards, styleframes, shot planning—so production doesn’t drift and waste budget.</p>
+            <div class="tagrow">
+              <span class="tag">Boards</span><span class="tag">Style</span><span class="tag">Planning</span>
+            </div>
           </article>
         </div>
       </div>
@@ -555,7 +529,7 @@
         <div class="section-title">
           <div>
             <h2>Selected work</h2>
-            <p class="sub">Replace these placeholders with real projects. If you don’t show work, people assume you don’t have any.</p>
+            <p class="sub">Replace these placeholders with real projects and thumbnails. This is what converts clients.</p>
           </div>
           <a class="btn" href="#contact">Request full portfolio</a>
         </div>
@@ -563,70 +537,22 @@
         <div class="grid">
           <article class="card work">
             <div class="thumb" aria-hidden="true"></div>
-            <h3>Product Launch Film — “Aurora”</h3>
-            <p class="meta">CGI product shots · lighting/lookdev · 3D animation · 4K delivery</p>
+            <h3>Product Launch Film</h3>
+            <p class="meta">CGI · lookdev · animation · 4K delivery</p>
           </article>
 
           <article class="card work">
             <div class="thumb" aria-hidden="true"></div>
-            <h3>VFX Composite — City Billboard Takeover</h3>
-            <p class="meta">Tracking · screen replacement · cleanup · grade match</p>
+            <h3>Live-Action VFX Composite</h3>
+            <p class="meta">Tracking · cleanup · comp · grade match</p>
           </article>
 
           <article class="card work">
             <div class="thumb" aria-hidden="true"></div>
-            <h3>Simulation Spot — Liquid Metal Reveal</h3>
-            <p class="meta">Fluid sim · shading · comp · sound-ready exports</p>
+            <h3>Simulation / FX Spot</h3>
+            <p class="meta">Fluids · particles · shading · finishing</p>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="wrap split">
-        <article class="card process">
-          <h2>Process</h2>
-          <p class="sub">No mystery, no messy back-and-forth. You get milestones and predictable feedback points.</p>
-
-          <div class="steps">
-            <div class="step">
-              <div class="num">1</div>
-              <div><b>Brief + references</b><span>We define deliverables, style, timeline, and success criteria.</span></div>
-            </div>
-            <div class="step">
-              <div class="num">2</div>
-              <div><b>Styleframes / previs</b><span>We lock the look early so production doesn’t drift.</span></div>
-            </div>
-            <div class="step">
-              <div class="num">3</div>
-              <div><b>Production + reviews</b><span>Clear checkpoints. You give feedback; we execute.</span></div>
-            </div>
-            <div class="step">
-              <div class="num">4</div>
-              <div><b>Final polish + delivery</b><span>Color, comp, sound handoff, and platform-ready exports.</span></div>
-            </div>
-          </div>
-        </article>
-
-        <aside class="card test" aria-label="Testimonials">
-          <h2>What clients care about</h2>
-          <p class="sub">You don’t win work by saying “quality”. You win by being reliable and showing results.</p>
-
-          <div class="quote">
-            <p>“They delivered a premium look without endless revisions. Clean communication and the final film performed.”</p>
-            <small>— Client Name, Brand / Agency</small>
-          </div>
-
-          <div class="quote">
-            <p>“The CGI matched our live-action perfectly. No one could tell where the real footage ended.”</p>
-            <small>— Producer, Production House</small>
-          </div>
-
-          <div class="quote">
-            <p>“Fast turnaround, strong taste, and they actually met deadlines. Rare.”</p>
-            <small>— Marketing Lead, DTC Brand</small>
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -634,14 +560,14 @@
       <div class="wrap">
         <article class="card contact">
           <div>
-            <h3>Get a quote</h3>
-            <p class="sub">Tell us what you need. If you’re vague, you’ll get vague pricing. Be specific.</p>
+            <h2>Get a quote</h2>
+            <p class="sub">Send a short brief. If you include budget + deadline, you’ll get faster answers.</p>
             <p class="note">
-              Email: <a href="mailto:hello@yourstudio.com" style="color:rgba(255,255,255,.85);text-decoration:underline;">hello@yourstudio.com</a><br/>
+              Email: <a href="mailto:hello@yourstudio.com" style="text-decoration:underline;">hello@yourstudio.com</a><br/>
               Location: Your City · Remote worldwide
             </p>
             <p class="note">
-              Prefer a deck? Add a link to your brief (Google Doc / Notion) and references.
+              Brutal truth: clients don’t care about “we do everything”. They care about results and proof. Add real work thumbnails next.
             </p>
           </div>
 
@@ -656,11 +582,12 @@
             </div>
             <div>
               <label for="message">Project details</label>
-              <textarea id="message" name="message" placeholder="What are you making? Duration? Style references? Deadline? Budget range?" required></textarea>
+              <textarea id="message" name="message" placeholder="What are you making? Duration? References? Deadline? Budget range?" required></textarea>
             </div>
             <button class="btn primary" type="submit">Send inquiry</button>
+
             <p class="note">
-              Note: mailto forms depend on the visitor’s email app. For a real website, replace this with a proper form handler (e.g., Formspree, Getform, or a serverless function).
+              Mailto forms rely on the visitor’s email app. For a professional site, switch to a real form endpoint.
             </p>
           </form>
         </article>
@@ -675,17 +602,38 @@
         <span>Studio Name</span>
         <span style="color:var(--faint);font-size:13px;">© <span id="y"></span></span>
       </div>
-      <div class="links">
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
         <a href="#services">Services</a>
         <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
+        <a href="https://www.youtube.com/watch?v=j8CeqPwukWk" target="_blank" rel="noreferrer">Showreel</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const btn = document.getElementById("hamburger");
+    const panel = document.getElementById("mobilePanel");
+    const links = document.querySelectorAll(".mLink");
+
+    function closeMenu(){
+      panel.style.display = "none";
+      btn.setAttribute("aria-expanded", "false");
+    }
+
+    btn.addEventListener("click", () => {
+      const open = panel.style.display === "block";
+      panel.style.display = open ? "none" : "block";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+    });
+
+    links.forEach(a => a.addEventListener("click", closeMenu));
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 860) closeMenu();
+    });
   </script>
 </body>
 </html>
